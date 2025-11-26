@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milankovitch Cycles - Temperature Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Milankovitch Cycles and Temperature Effects</h1>
+        <p>Visualization of temperature changes based on Milankovitch cycle parameters</p>
+    </header>
+
+    <main>
+        <section class="controls">
+            <h2>Image Parameters</h2>
+            <div class="control-grid">
+                <div class="control-group">
+                    <label for="latitude">Latitude (phi):</label>
+                    <input type="text" id="latitude" placeholder="e.g., 45">
+                </div>
+                <div class="control-group">
+                    <label for="eccentricity">Eccentricity (exc):</label>
+                    <input type="text" id="eccentricity" placeholder="e.g., 0.05">
+                </div>
+                <div class="control-group">
+                    <label for="obliquity">Obliquity (obl):</label>
+                    <input type="text" id="obliquity" placeholder="e.g., 23.5">
+                </div>
+                <div class="control-group">
+                    <label for="precession">Precession (pre):</label>
+                    <input type="text" id="precession" placeholder="e.g., 102">
+                </div>
+                <div class="control-group">
+                    <label for="albedo">Albedo (alb):</label>
+                    <input type="text" id="albedo" placeholder="e.g., 0.3">
+                </div>
+                <div class="control-group">
+                    <button id="loadImages" onclick="loadImages()">Load Images</button>
+                    <button id="clearImages" onclick="clearImages()">Clear</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="image-gallery">
+            <h2>Temperature Visualizations</h2>
+            <div id="imageContainer" class="image-container">
+                <p class="instruction">Enter parameters above and click "Load Images" to display the temperature visualizations.</p>
+            </div>
+        </section>
+
+        <section class="instructions">
+            <h2>How to Use</h2>
+            <ol>
+                <li>Generate your images using the Python script with the naming patterns:
+                    <ul>
+                        <li><code>Temp_lat{'{phi}'}_exc{'{excc}'}_obl{'{obll}'}_pre{'{precc}'}_alb{'{albb}'}.png</code></li>
+                        <li><code>Var_temp_lat{'{phi}'}_exc{'{excc}'}_obl{'{obll}'}_pre{'{precc}'}_alb{'{albb}'}.png</code></li>
+                    </ul>
+                </li>
+                <li>Place the generated PNG files in the same directory as this HTML file</li>
+                <li>Enter the parameter values used to generate your images</li>
+                <li>Click "Load Images" to display both temperature and temperature variation graphs</li>
+            </ol>
+            <h3>Parameter Definitions</h3>
+            <ul>
+                <li><strong>Latitude (phi):</strong> Geographic latitude in degrees</li>
+                <li><strong>Eccentricity (exc):</strong> Orbital eccentricity value</li>
+                <li><strong>Obliquity (obl):</strong> Axial tilt in degrees</li>
+                <li><strong>Precession (pre):</strong> Precession angle in degrees</li>
+                <li><strong>Albedo (alb):</strong> Surface reflectivity (0-1)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Milankovitch Cycles Temperature Visualization Tool</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
