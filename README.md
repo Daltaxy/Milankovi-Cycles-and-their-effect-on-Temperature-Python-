@@ -1,1 +1,0 @@
-# Milankovi-Cycles-and-their-effect-on-Temperature-Python-
